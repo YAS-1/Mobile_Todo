@@ -6,7 +6,7 @@ export default function Index() {
     <View
       style={styles.container}
     >
-      <Text style={styles.content}>Hello, Fabias 🌍</Text>
+      <Text style={styles.content}>Hello, Nicole 🌍</Text>
       <Text>Hey</Text>
     </View>
   );
