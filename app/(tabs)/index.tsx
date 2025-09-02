@@ -6,13 +6,11 @@ export default function Index() {
     <View
       style={styles.container}
     >
-      <Text style={styles.content}>Hello, Nicole 🌍</Text>
+    <Text style={styles.content}>Hello, Native 🌍</Text>
       <Text>Hey</Text>
     </View>
   );
 }
-
-
 
 //creating a styleSheet for design
 const styles = StyleSheet.create({
