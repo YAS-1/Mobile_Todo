@@ -1,15 +1,17 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import useTheme from "@/hooks/useTheme";
+import useTheme, { ColorScheme } from "@/hooks/useTheme";
+
+
 
 
 export default function Index() {
+  const { toggleDarkMode, colors } = useTheme();
 
-  const { toggleDarkMode } = useTheme();
+  const styles = createStyles(colors);
 
   return (
     <View
-      style={styles.container}
-    >
+      style={styles.container}>
     <Text style={styles.content}>Hello, Native 🌍</Text>
       <Text>Hey</Text>
       <TouchableOpacity onPress={toggleDarkMode}>
@@ -20,16 +22,18 @@ export default function Index() {
 }
 
 //creating a styleSheet for design
-const styles = StyleSheet.create({
-  container : {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "sliver",
-  },
-  content: {
-        fontSize: 20,
-        fontWeight: "bold",
-        color: "red",
+const createStyles = (colors: ColorScheme) => {
+  const styles = StyleSheet.create({
+    container : {
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          gap: 10,
+          backgroundColor: colors.bg
+    },
+    content: {
+          fontSize: 20,
   }
-})
+});
+  return styles;
+}
